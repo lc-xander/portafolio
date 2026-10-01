@@ -92,43 +92,62 @@ export const projects: Project[] = [
        { src: '/media/homelab-1.png', alt: 'Descripción real de la captura', caption: 'Opcional' } */
   },
 
+  /* ----------------------------------------------------------------
+     Proyecto de aplicación web. Datos proporcionados por el autor.
+
+     TODO: documentar las secciones largas del detalle
+     - arquitectura y flujo de autenticación
+     - estructura de la base de datos
+     - panel administrativo: qué permite hacer
+     - problemas encontrados y cómo se resolvieron
+     Inserta objetos con la forma `ProjectSection`.
+  ---------------------------------------------------------------- */
   {
-    /* ----------------------------------------------------------------
-       >>> PROYECTO DE GITHUB — PENDIENTE <<<
-       Este proyecto existe y está publicado, pero todavía no se han
-       proporcionado: nombre, propósito, stack, qué hace, qué aprendí
-       ni el enlace al repositorio.
-
-       Todo lo que no se conoce está en `null` o `[]` y la interfaz lo
-       muestra como pendiente. NO se inventa.
-
-       Para completarlo:
-       1. `name`        → nombre real del proyecto
-       2. `summary`     → una o dos líneas reales
-       3. `problem`     → qué problema resuelve
-       4. `contribution`→ qué hiciste tú
-       5. `learnings`   → qué aprendiste
-       6. `stack`       → tecnologías reales
-       7. `links`       → [{ label: 'Repositorio', url: 'https://github.com/...' }]
-       8. `screenshot`  → cuando las tengas
-    ---------------------------------------------------------------- */
-    slug: 'proyecto-github',
-    name: 'Proyecto de GitHub',
+    slug: 'mochila',
+    name: 'Mochila',
     kind: 'destacado',
-    status: 'por-documentar',
+    status: 'operativo',
     order: 2,
-    summary: null,
-    problem: null,
-    contribution: null,
-    learnings: null,
-    stack: [],
-    meta: [
-      { label: 'Tipo', value: 'Aplicación' },
-      { label: 'Estado', value: 'Publicado' },
+
+    summary:
+      'Aplicación web para que estudiantes consulten sus horarios semanales, con autenticación, activación de cuentas y un panel administrativo.',
+
+    problem:
+      'Facilitar la consulta de horarios de estudiantes y centralizar la gestión de alumnos, grupos, materias, horarios y códigos de activación.',
+
+    contribution:
+      'Desarrollé una aplicación full-stack con backend, frontend, autenticación, sesiones, roles de usuario y persistencia de datos en MySQL.',
+
+    learnings: [
+      'Desarrollo full-stack: backend, frontend y persistencia de datos en un solo proyecto.',
+      'Autenticación y autorización: diferencias entre autenticar a alguien y decidir qué puede ver.',
+      'Manejo de sesiones y cookies con express-session.',
+      'Hashing de contraseñas con Argon2 en lugar de guardar contraseñas en texto plano.',
+      'Bases de datos relacionales con MySQL: modelar entidades y relacionarlas.',
+      'Prácticas básicas de seguridad web.',
     ],
+
+    stack: ['Node.js', 'Express', 'MySQL', 'JavaScript', 'Argon2', 'express-session'],
+
+    meta: [
+      { label: 'Tipo', value: 'Aplicación web full-stack' },
+      { label: 'Estado', value: 'Publicado' },
+      { label: 'Repositorio', value: 'GitHub' },
+    ],
+
     sections: [],
-    links: [],
+
+    links: [
+      {
+        label: 'Ver en GitHub',
+        url: 'https://github.com/lc-xander/mochilaiep-fullstack',
+      },
+    ],
+
     screenshots: [],
+
+    /* TODO: Añade capturas cuando las tengas.
+       { src: '/media/mochila-1.png', alt: 'Descripción real', caption: 'Opcional' } */
   },
 ]
 

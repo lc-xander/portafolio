@@ -65,8 +65,8 @@ export const site = {
   /* ----------------------------------------------------------------
      Pendientes: rellenar con datos reales.
   ---------------------------------------------------------------- */
-  githubUrl: null as string | null,
-  email: null as string | null,
+  githubUrl: "https://github.com/lc-xander",
+  email: "xanderlopezculebro@gmail.com",
 }
 
 export const contact: ContactLink[] = [
