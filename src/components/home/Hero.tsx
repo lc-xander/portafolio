@@ -84,8 +84,8 @@ export function Hero() {
             </Reveal>
           </div>
 
-          {/* Foto: en desktop, alineada arriba con el nombre */}
-          <div className="lg:pt-1">
+          {/* Foto: columna fija, no se estira para no romper el texto */}
+          <div className="flex justify-center lg:pt-1">
             <Portrait />
           </div>
         </div>

@@ -60,7 +60,7 @@ export const site = {
      Foto del inicio. `null` = marco vacío (estado inicial).
      Alt: ej. 'Alexander López'.
   ---------------------------------------------------------------- */
-  photo: null as { src: string; alt: string } | null,
+  photo: { src: '/xan.jpg', alt: 'Alexander López' },
 
   /* ----------------------------------------------------------------
      Pendientes: rellenar con datos reales.
