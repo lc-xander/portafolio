@@ -18,56 +18,70 @@ export const projects: Project[] = [
     status: 'operativo',
     order: 1,
     summary:
-      'Un servidor propio en un OptiPlex con Debian, Docker y varios servicios self-hosted accesibles desde mi red y desde fuera con Tailscale.',
+      'Servidor personal en un Dell OptiPlex con Debian, Docker y varios servicios self-hosted.',
 
     problem:
-      'Quería un lugar donde alojar mis propias cosas y aprender a administrar un servidor de verdad: sistema, red, servicios y problemas que aparecen cuando dejas de theory-crafting y algo se cae a las 11 de la noche.',
+      'Quería un lugar donde alojar mis propias cosas y aprender administración de sistemas, redes y servicios self-hosted.',
 
     contribution:
-      'Armé el servidor, instalé Debian, levanté los servicios con Docker y configuré el acceso remoto con Tailscale.',
+      'Armé el servidor, instalé Debian y levanté los servicios con Docker.',
 
-    learnings: null,
+    learnings: [
+      'Administración de Linux con Debian.',
+      'Self-hosting y operación de servicios personales.',
+      'Redes y acceso remoto mediante SSH.',
+      'Almacenamiento con discos SATA.',
+      'Contenedores y servicios con Docker.',
+      'Configuración de nginx.',
+      'Bases de datos con MariaDB.',
+      'Diagnóstico de problemas en un servidor.',
+    ],
 
     stack: [
       'Dell OptiPlex',
-      'Debian',
+      'Intel Core i5-2400',
+      '8 GB RAM',
+      '2x 500 GB SATA HDD',
+      'Debian 13',
       'Docker',
       'Nextcloud',
       'Immich',
       'Jellyfin',
       'Jellyseerr',
+      'Radarr',
+      'qBittorrent',
+      'MariaDB',
+      'nginx',
       'Netdata',
       'SSH',
       'Networking',
-      'Tailscale',
     ],
 
     meta: [
       { label: 'Tipo', value: 'Infraestructura personal' },
-      { label: 'Base', value: 'Debian' },
+      { label: 'Base', value: 'Debian 13' },
       { label: 'Hardware', value: 'Dell OptiPlex' },
+      { label: 'CPU', value: 'Intel Core i5-2400' },
+      { label: 'Memoria', value: '8 GB RAM' },
+      { label: 'Almacenamiento', value: '2x 500 GB SATA HDD' },
       { label: 'Estado', value: 'Operativo' },
     ],
 
-    /* --- TODO: documentar el resto cuando esté listo -------------
-       - objetivo / por qué existe (llena `problem`)
-       - hardware concreto (modelo, CPU, RAM, disco)
-       - servicios y qué hace cada uno
-       - arquitectura de la red
-       - problemas encontrados y cómo los resolví
-       - qué aprendí
-       Inserta secciones con la forma `ProjectSection`.            */
     sections: [
       {
         title: 'Qué hace',
         body: [
-          'El OptiPlex corre Debian y aloja varios servicios en contenedores de Docker. Cada servicio hace una cosa distinta y se accede a él por su propio nombre de dominio interno.',
+          'El OptiPlex corre Debian 13 y aloja varios servicios en contenedores de Docker.',
         ],
         items: [
           'Nextcloud — archivos y sincronización.',
           'Immich — galería de fotos y respaldos.',
           'Jellyfin — servidor de medios.',
           'Jellyseerr — las peticiones de medios, conectadas a Jellyfin.',
+          'Radarr — gestión de películas.',
+          'qBittorrent — descargas.',
+          'MariaDB — base de datos.',
+          'nginx — servidor web y proxy inverso.',
           'Netdata — métricas del servidor en vivo.',
         ],
       },
@@ -80,7 +94,7 @@ export const projects: Project[] = [
       {
         title: 'Acceso remoto',
         body: [
-          'En vez de abrir puertos al público, uso Tailscale para llegar a los servicios desde fuera. Todo el tráfico va por la red privada y el servidor no queda expuesto directamente a internet.',
+          'La administración del servidor se realiza mediante SSH.',
         ],
       },
     ],
@@ -95,12 +109,6 @@ export const projects: Project[] = [
   /* ----------------------------------------------------------------
      Proyecto de aplicación web. Datos proporcionados por el autor.
 
-     TODO: documentar las secciones largas del detalle
-     - arquitectura y flujo de autenticación
-     - estructura de la base de datos
-     - panel administrativo: qué permite hacer
-     - problemas encontrados y cómo se resolvieron
-     Inserta objetos con la forma `ProjectSection`.
   ---------------------------------------------------------------- */
   {
     slug: 'mochila',
@@ -131,7 +139,7 @@ export const projects: Project[] = [
 
     meta: [
       { label: 'Tipo', value: 'Aplicación web full-stack' },
-      { label: 'Estado', value: 'Publicado' },
+      { label: 'Estado', value: 'Operativo' },
       { label: 'Repositorio', value: 'GitHub' },
     ],
 
@@ -146,8 +154,6 @@ export const projects: Project[] = [
 
     screenshots: [],
 
-    /* TODO: Añade capturas cuando las tengas.
-       { src: '/media/mochila-1.png', alt: 'Descripción real', caption: 'Opcional' } */
   },
 ]
 
