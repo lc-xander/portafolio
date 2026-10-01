@@ -49,7 +49,7 @@ export interface ProjectScreenshot {
 export interface Project {
   slug: string
   name: string
-  /** `destacado` = aparece en la sección principal. `experimento` = grid chico. */
+  /** `destacado` = grid de dos columnas. `experimento` = grid chico de tres. */
   kind: 'destacado' | 'experimento'
   status: ProjectStatus
   /**

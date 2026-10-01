@@ -1,16 +1,22 @@
-import type { SiteMeta, ContactLink } from '../types'
-
 /* ------------------------------------------------------------------
-   Identidad, copy de la portada y contacto.
+   Slot para tu foto.
 
-   >>> TODO: completa estos datos <<<
-   - `site.githubUrl`  → tu usuario de GitHub
-   - `site.email`      → tu correo
-   - `contact[]`       → href de GitHub y del correo
+   Cómo llenarlo:
+   1. Deja la imagen en `public/` (ej. `public/foto.jpg`).
+   2. En `src/data/site.ts`, pon `photo: { src: '/foto.jpg', alt: '...' }`.
 
-   Mientras estén en `null` la sección de contacto los muestra como
-   "pendiente", no como un enlace roto ni como texto inventado.
+   Recomendaciones para la foto:
+   - Vertical o casi (por ejemplo 3:4). El marco es `aspect-[4/5]`.
+   - El encuadre del torso o la cara. No una selfie de lejos.
+   - Fondo liso o con poca información detrás.
+   - JPG o WebP. Debajo de ~200 KB para que no pese.
+   - `alt` describe a la persona, no la composición.
+
+   while `null`, el sitio muestra un marco vacío con la misma
+   retícula técnica del fondo. Nada inventado.
 ------------------------------------------------------------------- */
+
+import type { SiteMeta, ContactLink } from '../types'
 
 export const site = {
   fullName: 'Alexander López',
@@ -46,9 +52,15 @@ export const site = {
   meta: {
     title: 'Alexander López — Programación y Matemáticas',
     description:
-      'Estudiante de secundaria en Xalapa, Veracruz. Programación, matemáticas y física. Homelab, automatización y experimentos que construyo para entender cómo funcionan las cosas.',
+      'Estudiante de secundaria en Xalapa, Veracruz. Programación, matemáticas y física. Homelab, automatización y cosas que construyo para entender cómo funcionan.',
     locale: 'es_MX',
   } satisfies SiteMeta,
+
+  /* ----------------------------------------------------------------
+     Foto del inicio. `null` = marco vacío (estado inicial).
+     Alt: ej. 'Alexander López'.
+  ---------------------------------------------------------------- */
+  photo: null as { src: string; alt: string } | null,
 
   /* ----------------------------------------------------------------
      Pendientes: rellenar con datos reales.
@@ -61,7 +73,7 @@ export const contact: ContactLink[] = [
   {
     id: 'github',
     label: 'GitHub',
-    hint: 'Código de los experimentos y los scripts.',
+    hint: 'Código de los proyectos y los scripts.',
     href: site.githubUrl,
     external: true,
     icon: 'github',

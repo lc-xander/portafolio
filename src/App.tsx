@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
 import { featuredProjects } from './data/projects'
-import { sortedExperiments } from './data/experiments'
 import { useHashRoute } from './lib/useHashRoute'
 import { useSeo } from './lib/seo'
 import { Footer } from './components/layout'
@@ -19,7 +18,6 @@ import { ProjectDetail } from './components/project/ProjectDetail'
  * Contrato de rutas:
  *   # (o vacío)             → portada completa
  *   #proyectos              → portada, ancla en Proyectos
- *   #experimentos           → portada, ancla en Experimentos
  *   #aprendiendo            → portada, ancla en Aprendiendo
  *   #matematicas            → portada, ancla en Matemáticas
  *   #sobre                  → portada, ancla en Sobre mí
@@ -29,9 +27,10 @@ import { ProjectDetail } from './components/project/ProjectDetail'
 export default function App() {
   const { route, params, home, hash } = useHashRoute()
 
-  const allProjects = [...featuredProjects, ...sortedExperiments]
   const activeProject =
-    route === 'proyecto' ? allProjects.find((p) => p.slug === params.slug) : null
+    route === 'proyecto'
+      ? featuredProjects.find((p) => p.slug === params.slug)
+      : null
 
   // Página completa = portada. Sin título por sección en el <title>.
   useSeo({ title: undefined })

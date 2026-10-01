@@ -7,14 +7,13 @@
 
    Uso:
    - const { route, params } = useHashRoute()
-   - route === 'home' | 'proyectos' | 'proyecto' | 'experimentos' | ...
+    - route === 'home' | 'proyectos' | 'proyecto' | 'aprendiendo' | ...
 ------------------------------------------------------------------- */
 import { useCallback, useEffect, useMemo, useState } from 'react'
 
 export type Route =
   | 'home'
   | 'proyectos'
-  | 'experimentos'
   | 'aprendiendo'
   | 'matematicas'
   | 'sobre'
@@ -46,8 +45,6 @@ function parseHash(h: string): { route: Route; params: ProjectRouteParams } {
       return { route: 'home', params: { slug: null } }
     case 'proyectos':
       return { route: 'proyectos', params: { slug: null } }
-    case 'experimentos':
-      return { route: 'experimentos', params: { slug: null } }
     case 'aprendiendo':
       return { route: 'aprendiendo', params: { slug: null } }
     case 'matematicas':
@@ -83,7 +80,6 @@ export function useHashRoute() {
 
   const home = useCallback(() => go(''), [go])
   const proyectos = useCallback(() => go('#proyectos'), [go])
-  const experimentos = useCallback(() => go('#experimentos'), [go])
   const aprendiendo = useCallback(() => go('#aprendiendo'), [go])
   const matematicas = useCallback(() => go('#matematicas'), [go])
   const sobre = useCallback(() => go('#sobre'), [go])
@@ -96,7 +92,6 @@ export function useHashRoute() {
     go,
     home,
     proyectos,
-    experimentos,
     aprendiendo,
     matematicas,
     sobre,

@@ -5,7 +5,6 @@ import { Container } from '../layout'
 
 const LINKS = [
   { label: 'Proyectos', to: '#proyectos' },
-  { label: 'Experimentos', to: '#experimentos' },
   { label: 'Aprendiendo', to: '#aprendiendo' },
   { label: 'Matemáticas', to: '#matematicas' },
   { label: 'Sobre mí', to: '#sobre' },
@@ -67,7 +66,6 @@ export function Header() {
 
     if (t === '') return h === '' || h === 'home'
     if (t === 'proyectos') return h === 'proyectos' || route === 'proyecto'
-    if (t === 'experimentos') return h === 'experimentos'
     if (t === 'aprendiendo') return h === 'aprendiendo'
     if (t === 'matematicas') return h === 'matematicas'
     if (t === 'sobre') return h === 'sobre'
